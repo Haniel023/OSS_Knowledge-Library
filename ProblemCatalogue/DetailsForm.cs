@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace ProblemCatalogue
 {
@@ -29,6 +30,7 @@ namespace ProblemCatalogue
             textBox_Reso.Text = rowData["CCRESO"];
             textBox_Grp.Text = rowData["CCGRP"];
             textBox_PIC.Text = rowData["CCPIC"];
+            txtSavedPath.Text = rowData["CCATTACH"];
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -55,5 +57,27 @@ namespace ProblemCatalogue
         {
 
         }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            string filePath = txtSavedPath.Text;
+
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                try
+                {
+                    Process.Start(filePath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured while opening the file: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No file path available");
+            }
+        }
     }
 }
+

@@ -47,6 +47,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cBox_Grp = new System.Windows.Forms.ComboBox();
             this.btn_Save = new System.Windows.Forms.Button();
+            this.btnUpload = new System.Windows.Forms.Button();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -239,11 +241,31 @@
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
+            // btnUpload
+            // 
+            this.btnUpload.Location = new System.Drawing.Point(674, 210);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(69, 23);
+            this.btnUpload.TabIndex = 18;
+            this.btnUpload.Text = "Upload";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // txtFilePath
+            // 
+            this.txtFilePath.Location = new System.Drawing.Point(749, 213);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.ReadOnly = true;
+            this.txtFilePath.Size = new System.Drawing.Size(134, 20);
+            this.txtFilePath.TabIndex = 19;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 629);
+            this.Controls.Add(this.txtFilePath);
+            this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.cBox_Grp);
             this.Controls.Add(this.label9);
@@ -292,5 +314,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cBox_Grp;
         private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.TextBox txtFilePath;
     }
 }

@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace ProblemCatalogue
 {
     public partial class RegisterForm : Form
     {
         private string loggedInUsername;
+        private string selectedFilePath;
         public RegisterForm(string loggedInUsername)
         {
             InitializeComponent();
@@ -63,8 +66,9 @@ namespace ProblemCatalogue
                 string resolution = tB_Resolution.Text;
                 string pic = tB_PIC.Text;
                 string secgroup = cBox_Grp.Text;
+                string attachFile = txtFilePath.Text;
 
-                string sqlInsert = "INSERT INTO SSC_CAT (CCREF, CCTITLE, CCSYSTEM, CCLINE, CCDESC, CCRESO, \"CCGRP\", CCPIC) " + "VALUES (:refNo, :title, :system, :line, :description, :resolution, :secgroup, :pic)";
+                string sqlInsert = "INSERT INTO SSC_CAT (CCREF, CCTITLE, CCSYSTEM, CCLINE, CCDESC, CCRESO, \"CCGRP\", CCPIC, CCATTACH) " + "VALUES (:refNo, :title, :system, :line, :description, :resolution, :secgroup, :pic, :attachFile)";
                 using (OracleConnection connection = new OracleConnection(connectionString))
                 {
                     try
@@ -80,6 +84,7 @@ namespace ProblemCatalogue
                             command.Parameters.Add("resolution", OracleDbType.Varchar2).Value = resolution;
                             command.Parameters.Add("secgroup", OracleDbType.Varchar2).Value = secgroup;
                             command.Parameters.Add("pic", OracleDbType.Varchar2).Value = pic;
+                            command.Parameters.Add("attachFile", OracleDbType.Varchar2).Value = attachFile;
                             command.ExecuteNonQuery();
                         }
                         tBox_Ref.Text = GenerateReferenceNo();
@@ -89,6 +94,7 @@ namespace ProblemCatalogue
                         tB_Description.Text = string.Empty;
                         tB_Resolution.Text = string.Empty;
                         tB_PIC.Text = string.Empty;
+                        txtFilePath.Text = string.Empty;
                         cBox_Grp.SelectedIndex = -1;
 
                         MessageBox.Show("Registration Saved!");
@@ -102,6 +108,34 @@ namespace ProblemCatalogue
             else
             {
                 MessageBox.Show("Please fill in all the fields.");
+            }
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Excel Files (*.xlsx;*.xls)|*.xlsx;*.xls|PowerPoint Files (*.pptx;*.ppt)|*.pptx;*.ppt|All Files (*.*)|*.*";
+                openFileDialog.Title = "Select a file";
+                
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string selectedFilePath = openFileDialog.FileName;
+                    string destinationFolder = @"\\10.164.11.44\d$\OSS_Knowledge-Library\attachments";
+
+                    try
+                    {
+                        string fileName = Path.GetFileName(selectedFilePath);
+                        string destinationFilePath = Path.Combine(destinationFolder, fileName);
+                        txtFilePath.Text = destinationFilePath;
+
+                        File.Copy(selectedFilePath, destinationFilePath, true);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occured while uploading the file " + ex.Message);
+                    }
+                }
             }
         }
     }
