@@ -15,3 +15,20 @@ D:\11_GitHub\ProblemCatalogue\ProblemCatalogue\ProblemCatalogue\bin\Debug\OSS Sy
 D:\11_GitHub\ProblemCatalogue\ProblemCatalogue\ProblemCatalogue\obj\Debug\OSS System Support Catalogue.exe
 D:\11_GitHub\ProblemCatalogue\ProblemCatalogue\ProblemCatalogue\obj\Debug\OSS System Support Catalogue.pdb
 D:\11_GitHub\ProblemCatalogue\ProblemCatalogue\ProblemCatalogue\obj\Debug\ProblemCatalogue.csprojAssemblyReference.cache
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\bin\Debug\OSS System Support Catalogue.exe.config
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\bin\Debug\OSS System Support Catalogue.exe
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\bin\Debug\OSS System Support Catalogue.pdb
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\bin\Debug\Oracle.DataAccess.dll
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.csprojAssemblyReference.cache
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.CatalogueTable.resources
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.DetailsForm.resources
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.LandForm.resources
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.LandingPage.resources
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.LoginForm.resources
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.Properties.Resources.resources
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.RegisterForm.resources
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.csproj.GenerateResource.cache
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.csproj.CoreCompileInputs.cache
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.csproj.CopyComplete
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\OSS System Support Catalogue.exe
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\OSS System Support Catalogue.pdb

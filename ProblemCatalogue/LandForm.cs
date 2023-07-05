@@ -63,7 +63,8 @@ namespace ProblemCatalogue
 
         private void button2_Click(object sender, EventArgs e)
         {
-            RegisterForm registerForm = new RegisterForm();
+            string loggedInUsername = lblUserName.Text;
+            RegisterForm registerForm = new RegisterForm(loggedInUsername);
             registerForm.FormBorderStyle = FormBorderStyle.None;
             registerForm.TopLevel = false;
             splitContainer1.Panel2.Controls.Clear();

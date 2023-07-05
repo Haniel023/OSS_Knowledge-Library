@@ -13,18 +13,14 @@ namespace ProblemCatalogue
 {
     public partial class RegisterForm : Form
     {
-        public string LoggedInUsername { get; set; }
-        public RegisterForm()
+        private string loggedInUsername;
+        public RegisterForm(string loggedInUsername)
         {
             InitializeComponent();
             tBox_Ref.Text = GenerateReferenceNo();
+            this.loggedInUsername = loggedInUsername;
+            tB_PIC.Text = loggedInUsername;
         }
-
-        private void RegisterForm_Load(object sender, EventArgs e)
-        {
-            tB_PIC.Text = LoggedInUsername;
-        }
-
         private string GenerateReferenceNo()
         {
             string referenceNo = string.Empty;

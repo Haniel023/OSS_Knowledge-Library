@@ -85,6 +85,7 @@
             // 
             this.tBox_Ref.BackColor = System.Drawing.SystemColors.Control;
             this.tBox_Ref.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tBox_Ref.Enabled = false;
             this.tBox_Ref.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBox_Ref.Location = new System.Drawing.Point(773, 52);
             this.tBox_Ref.Name = "tBox_Ref";
@@ -198,9 +199,11 @@
             // tB_PIC
             // 
             this.tB_PIC.BackColor = System.Drawing.SystemColors.Control;
+            this.tB_PIC.Enabled = false;
             this.tB_PIC.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tB_PIC.Location = new System.Drawing.Point(729, 96);
             this.tB_PIC.Name = "tB_PIC";
+            this.tB_PIC.ReadOnly = true;
             this.tB_PIC.Size = new System.Drawing.Size(149, 22);
             this.tB_PIC.TabIndex = 14;
             // 

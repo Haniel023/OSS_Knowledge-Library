@@ -64,13 +64,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.DarkCyan;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 23.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(23, 278);
+            this.label1.Location = new System.Drawing.Point(22, 278);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(396, 36);
+            this.label1.Size = new System.Drawing.Size(398, 31);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Welcome to Knowledge Library";
+            this.label1.Text = "Welcome to OSS Knowledge Library";
             // 
             // label2
             // 
@@ -78,7 +78,7 @@
             this.label2.BackColor = System.Drawing.Color.DarkCyan;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(128, 328);
+            this.label2.Location = new System.Drawing.Point(121, 320);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(207, 23);
             this.label2.TabIndex = 2;
@@ -176,9 +176,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(762, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 13);
+            this.label8.Size = new System.Drawing.Size(71, 13);
             this.label8.TabIndex = 14;
-            this.label8.Text = "v.1.01 (Beta)";
+            this.label8.Text = "v.1.0.1 (Beta)";
             // 
             // pictureBox3
             // 

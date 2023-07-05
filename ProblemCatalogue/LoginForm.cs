@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,8 +65,7 @@ namespace ProblemCatalogue
             if (credentials.UserId != 0)
             {
                 string loggedInUsername = credentials.UserName;
-                RegisterForm registerForm = new RegisterForm();
-                registerForm.LoggedInUsername = loggedInUsername;
+                RegisterForm registerForm = new RegisterForm(loggedInUsername);
 
                 // Open MainForm and set the connection
                 LandForm landForm = new LandForm();

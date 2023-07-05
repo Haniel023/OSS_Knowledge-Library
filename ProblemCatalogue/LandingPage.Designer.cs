@@ -33,6 +33,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblSystemTime = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -47,9 +50,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -80,9 +80,9 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(18, 21);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(97, 13);
+            this.label13.Size = new System.Drawing.Size(100, 13);
             this.label13.TabIndex = 0;
-            this.label13.Text = "Verions 1.01 (Beta)";
+            this.label13.Text = "Verions 1.0.1 (Beta)";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // groupBox2
@@ -98,6 +98,33 @@
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Version and Updates";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(28, 97);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(90, 13);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Register Function";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(27, 81);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(99, 13);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Catalogue Function";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "ChangeLogs:";
             // 
             // label12
             // 
@@ -248,33 +275,6 @@
             this.label1.Size = new System.Drawing.Size(501, 45);
             this.label1.TabIndex = 15;
             this.label1.Text = "Welcome to Knowledge Library";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "ChangeLogs:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(27, 81);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(99, 13);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "Catalogue Function";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(28, 97);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(90, 13);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "Register Function";
             // 
             // LandingPage
             // 
