@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
+using System.IO;
 
 namespace ProblemCatalogue
 {
@@ -17,7 +18,8 @@ namespace ProblemCatalogue
         public LandForm()
         {
             InitializeComponent();
-            LandingPage landPage = new LandingPage();
+            string loggedInUsername = lblUserName.Text;
+            LandingPage landPage = new LandingPage(loggedInUsername);
             landPage.FormBorderStyle = FormBorderStyle.None;
             landPage.TopLevel = false;
             splitContainer1.Panel2.Controls.Clear();
@@ -43,7 +45,8 @@ namespace ProblemCatalogue
         //Clicking Landing Button
         private void button3_Click(object sender, EventArgs e)
         {
-            LandingPage landPage = new LandingPage();
+            string loggedInUsername = lblUserName.Text;
+            LandingPage landPage = new LandingPage(loggedInUsername);
             landPage.FormBorderStyle = FormBorderStyle.None;
             landPage.TopLevel = false;
             splitContainer1.Panel2.Controls.Clear();
@@ -53,7 +56,8 @@ namespace ProblemCatalogue
 
         private void btnCatalogue_Click(object sender, EventArgs e)
         {
-            CatalogueTable catalogueTable = new CatalogueTable();
+            string loggedInUsername = lblUserName.Text;
+            CatalogueTable catalogueTable = new CatalogueTable(loggedInUsername);
             catalogueTable.FormBorderStyle = FormBorderStyle.None;
             catalogueTable.TopLevel = false;
             splitContainer1.Panel2.Controls.Clear();
@@ -73,6 +77,32 @@ namespace ProblemCatalogue
         }
 
         private void LandForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string loggedInUsername = lblUserName.Text;
+            btnUploadPicture profileForm = new btnUploadPicture(loggedInUsername);
+            profileForm.FormBorderStyle = FormBorderStyle.None;
+            profileForm.TopLevel = false;
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(profileForm);
+            profileForm.Show();
+        }
+
+        private void btn_leaderBoard_Click(object sender, EventArgs e)
+        {
+            LeaderBoard leaderBoard = new LeaderBoard();
+            leaderBoard.FormBorderStyle = FormBorderStyle.None;
+            leaderBoard.TopLevel = false;
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(leaderBoard);
+            leaderBoard.Show();
+        }
+
+        private void LandForm_Load(object sender, EventArgs e)
         {
 
         }

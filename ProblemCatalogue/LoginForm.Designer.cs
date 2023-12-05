@@ -40,7 +40,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.errLbl = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -78,11 +77,11 @@
             this.label2.BackColor = System.Drawing.Color.DarkCyan;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(121, 320);
+            this.label2.Location = new System.Drawing.Point(102, 320);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 23);
+            this.label2.Size = new System.Drawing.Size(238, 23);
             this.label2.TabIndex = 2;
-            this.label2.Text = "A System Support Catalogue";
+            this.label2.Text = "Knowledge Management System";
             // 
             // label3
             // 
@@ -171,15 +170,6 @@
             this.errLbl.Size = new System.Drawing.Size(0, 18);
             this.errLbl.TabIndex = 13;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(762, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "v.1.0.1 (Beta)";
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::ProblemCatalogue.Properties.Resources.img_110757;
@@ -229,7 +219,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 593);
             this.Controls.Add(this.invalidLbl);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.errLbl);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -247,7 +236,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
-            this.Text = "System Support Catalogue";
+            this.Text = "System Support Catalogue v2.5";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -274,7 +263,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label errLbl;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label invalidLbl;
     }
 }

@@ -19,7 +19,6 @@ D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\bin\Debug\OSS System Support
 D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\bin\Debug\OSS System Support Catalogue.exe
 D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\bin\Debug\OSS System Support Catalogue.pdb
 D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\bin\Debug\Oracle.DataAccess.dll
-D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.csprojAssemblyReference.cache
 D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.CatalogueTable.resources
 D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.DetailsForm.resources
 D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.LandForm.resources
@@ -32,3 +31,14 @@ D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.c
 D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.csproj.CopyComplete
 D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\OSS System Support Catalogue.exe
 D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\OSS System Support Catalogue.pdb
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.ChangeLog.resources
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.btnUploadPicture.resources
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.LeaderBoard.resources
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.csprojAssemblyReference.cache
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\bin\Debug\OSS System Support Catalogue.exe.manifest
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\bin\Debug\OSS System Support Catalogue.application
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\OSS System Support Catalogue.TrustInfo.xml
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\OSS System Support Catalogue.exe.manifest
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\OSS System Support Catalogue.application
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.EditForm.resources
+D:\11_GitHub\OSS_Knowledge-Library\ProblemCatalogue\obj\Debug\ProblemCatalogue.Form1.resources

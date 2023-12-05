@@ -49,6 +49,8 @@
             this.btn_Save = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
             this.txtFilePath = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tb_CauseP = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,7 +167,7 @@
             this.tB_Description.Location = new System.Drawing.Point(240, 262);
             this.tB_Description.Multiline = true;
             this.tB_Description.Name = "tB_Description";
-            this.tB_Description.Size = new System.Drawing.Size(308, 171);
+            this.tB_Description.Size = new System.Drawing.Size(308, 65);
             this.tB_Description.TabIndex = 10;
             // 
             // label7
@@ -174,9 +176,9 @@
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(33, 451);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 16);
+            this.label7.Size = new System.Drawing.Size(65, 16);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Resolution:";
+            this.label7.Text = "Solution:";
             // 
             // tB_Resolution
             // 
@@ -185,7 +187,7 @@
             this.tB_Resolution.Multiline = true;
             this.tB_Resolution.Name = "tB_Resolution";
             this.tB_Resolution.Size = new System.Drawing.Size(308, 171);
-            this.tB_Resolution.TabIndex = 12;
+            this.tB_Resolution.TabIndex = 14;
             // 
             // label8
             // 
@@ -259,11 +261,32 @@
             this.txtFilePath.Size = new System.Drawing.Size(134, 20);
             this.txtFilePath.TabIndex = 19;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(33, 348);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(149, 32);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Cause of the Problem:\r\n(If its a problem)\r\n";
+            // 
+            // tb_CauseP
+            // 
+            this.tb_CauseP.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_CauseP.Location = new System.Drawing.Point(240, 345);
+            this.tb_CauseP.Multiline = true;
+            this.tb_CauseP.Name = "tb_CauseP";
+            this.tb_CauseP.Size = new System.Drawing.Size(308, 83);
+            this.tb_CauseP.TabIndex = 12;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 629);
+            this.Controls.Add(this.tb_CauseP);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.txtFilePath);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btn_Save);
@@ -316,5 +339,7 @@
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.TextBox txtFilePath;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tb_CauseP;
     }
 }

@@ -15,14 +15,14 @@ namespace ProblemCatalogue
 {
     public partial class RegisterForm : Form
     {
-        private string loggedInUsername;
+        private string Username;
         private string selectedFilePath;
         public RegisterForm(string loggedInUsername)
         {
             InitializeComponent();
             tBox_Ref.Text = GenerateReferenceNo();
-            this.loggedInUsername = loggedInUsername;
-            tB_PIC.Text = loggedInUsername;
+            Username = loggedInUsername;
+            tB_PIC.Text = Username;
         }
         private string GenerateReferenceNo()
         {
@@ -46,6 +46,7 @@ namespace ProblemCatalogue
                 string.IsNullOrWhiteSpace(tB_Description.Text) ||
                 string.IsNullOrWhiteSpace(tB_Resolution.Text) ||
                 string.IsNullOrWhiteSpace(tB_PIC.Text) ||
+                string.IsNullOrWhiteSpace(tb_CauseP.Text) ||
                 string.IsNullOrWhiteSpace(cBox_Grp.Text))
             {
                 return false;
@@ -57,18 +58,21 @@ namespace ProblemCatalogue
         {
             if (AreTextBoxesFilled())
             {
-                string connectionString = "Data Source=10.164.11.44:1521/xepdb1;User Id = drs; Password=drs;";
+                string connectionString = "User Id=drs;Password=drs;Data Source=SmartDev.ftcp.ten.fujitsu.com:1521/xepdb1";
                 string refNo = tBox_Ref.Text;
                 string title = tB_Title.Text;
                 string system = tB_System.Text;
                 string line = tB_Line.Text;
                 string description = tB_Description.Text;
+                string causeOFP = tb_CauseP.Text;
                 string resolution = tB_Resolution.Text;
                 string pic = tB_PIC.Text;
                 string secgroup = cBox_Grp.Text;
                 string attachFile = txtFilePath.Text;
 
-                string sqlInsert = "INSERT INTO SSC_CAT (CCREF, CCTITLE, CCSYSTEM, CCLINE, CCDESC, CCRESO, \"CCGRP\", CCPIC, CCATTACH) " + "VALUES (:refNo, :title, :system, :line, :description, :resolution, :secgroup, :pic, :attachFile)";
+                IncrementSSCEMPCounts(Username);
+
+                string sqlInsert = "INSERT INTO SSC_CAT (CCREF, CCTITLE, CCSYSTEM, CCLINE, CCDESC, CCCAUSE, CCRESO, \"CCGRP\", CCPIC, CCATTACH) " + "VALUES (:refNo, :title, :system, :line, :description, :causeOFP, :resolution, :secgroup, :pic, :attachFile)";
                 using (OracleConnection connection = new OracleConnection(connectionString))
                 {
                     try
@@ -81,6 +85,7 @@ namespace ProblemCatalogue
                             command.Parameters.Add("system", OracleDbType.Varchar2).Value = system;
                             command.Parameters.Add("line", OracleDbType.Varchar2).Value = line;
                             command.Parameters.Add("description", OracleDbType.Varchar2).Value = description;
+                            command.Parameters.Add("causeOFP", OracleDbType.Varchar2).Value = causeOFP;
                             command.Parameters.Add("resolution", OracleDbType.Varchar2).Value = resolution;
                             command.Parameters.Add("secgroup", OracleDbType.Varchar2).Value = secgroup;
                             command.Parameters.Add("pic", OracleDbType.Varchar2).Value = pic;
@@ -92,8 +97,9 @@ namespace ProblemCatalogue
                         tB_System.Text = string.Empty;
                         tB_Line.Text = string.Empty;
                         tB_Description.Text = string.Empty;
+                        tb_CauseP.Text = string.Empty;
                         tB_Resolution.Text = string.Empty;
-                        tB_PIC.Text = string.Empty;
+                        tB_PIC.Text = Username;
                         txtFilePath.Text = string.Empty;
                         cBox_Grp.SelectedIndex = -1;
 
@@ -111,6 +117,52 @@ namespace ProblemCatalogue
             }
         }
 
+        private void IncrementSSCEMPCounts(string pic)
+        {
+            string connectionString = "User Id=drs;Password=drs;Data Source=SmartDev.ftcp.ten.fujitsu.com:1521/xepdb1";
+            try
+            {
+                using (OracleConnection connection = new OracleConnection(connectionString))
+                {
+                    connection.Open();
+                    string sqlQuery = "SELECT DAILYC, MONTHLYC, OVERALLC FROM SSC_EMP WHERE NAME = :username";
+                    using (OracleCommand command = new OracleCommand(sqlQuery, connection))
+                    {
+                        command.Parameters.Add("username", OracleDbType.Varchar2).Value = Username;
+                        OracleDataReader reader = command.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            int dailyC = Convert.ToInt32(reader["DAILYC"]);
+                            int monthlyC = Convert.ToInt32(reader["MONTHLYC"]);
+                            int overallC = Convert.ToInt32(reader["OVERALLC"]);
+                            dailyC++;
+                            monthlyC++;
+                            overallC++;
+
+                            string newDailyC = dailyC.ToString();
+                            string newMonthlyC = monthlyC.ToString();
+                            string newOverallC = overallC.ToString();
+
+                            string updateQuery = "UPDATE SSC_EMP SET DAILYC = :dailyC, MONTHLYC = :monthlyC, OVERALLC = :overallC WHERE NAME = :Username";
+
+                            using (OracleCommand updateCommand = new OracleCommand(updateQuery, connection))
+                            {
+                                updateCommand.Parameters.Add("dailyC", OracleDbType.Varchar2).Value = newDailyC;
+                                updateCommand.Parameters.Add("monthlyC", OracleDbType.Varchar2).Value = newMonthlyC;
+                                updateCommand.Parameters.Add("overallC", OracleDbType.Varchar2).Value = newOverallC;
+                                updateCommand.Parameters.Add("Username", OracleDbType.Varchar2).Value = Username;
+
+                                updateCommand.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while incrementing counts in Table: " + ex.Message);
+            }
+        }
+
         private void btnUpload_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -121,7 +173,7 @@ namespace ProblemCatalogue
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string selectedFilePath = openFileDialog.FileName;
-                    string destinationFolder = @"\\10.164.11.44\d$\OSS_Knowledge-Library\attachments";
+                    string destinationFolder = @"\\smartdev\Drive_D\OSS_Knowledge-Library\attachments";
 
                     try
                     {

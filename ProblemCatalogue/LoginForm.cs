@@ -14,12 +14,27 @@ namespace ProblemCatalogue
 {
     public partial class LoginForm : Form
     {
-
-        private static string connectionString = "Data Source=10.164.11.44:1521/xepdb1;User Id = drs; Password=drs;";
+        Timer timerDelay = new Timer();
+        string connectionString = "User Id=drs;Password=drs;Data Source=SmartDev.ftcp.ten.fujitsu.com:1521/xepdb1";
         public LoginForm()
         {
             InitializeComponent();
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            timerDelay.Interval = 1500;
+            timerDelay.Tick += timerDelay_Tick;
+            timerDelay.Start();
+        }
+
+        private void timerDelay_Tick(object sender, EventArgs e)
+        {
+            timerDelay.Stop();
+            var ChangeLog = new ChangeLog();
+            ChangeLog.Show();
+        }
+
         private OracleConnection GetOracleConnection()
         {
             return new OracleConnection(connectionString);
@@ -111,11 +126,6 @@ namespace ProblemCatalogue
                     e.Cancel = true;
                 }
             }
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -13,23 +13,39 @@ namespace ProblemCatalogue
 {
     public partial class CatalogueTable : Form
     {
-
-        public CatalogueTable()
+        private string Username;
+        public event EventHandler DataRefreshed;
+        public CatalogueTable(string loggedInUsername)
         {
             InitializeComponent();
+            Username = loggedInUsername;
             LoadDataFromDatabase();
-            supportGrid.RowPrePaint += supportGrid_RowPrePaint;
+
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
             buttonColumn.HeaderText = "Details";
             buttonColumn.Name = "viewDetails";
             buttonColumn.Text = "View";
             buttonColumn.UseColumnTextForButtonValue = true;
             supportGrid.Columns.Add(buttonColumn);
+
+            supportGrid.RowPrePaint += supportGrid_RowPrePaint;
+            int columnIndex = 0;
+            supportGrid.Sort(supportGrid.Columns[columnIndex], System.ComponentModel.ListSortDirection.Descending);
         }
 
         private void supportGrid_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             supportGrid.Rows[e.RowIndex].Height = 100;
+            supportGrid.Columns[0].DefaultCellStyle.Padding = new Padding((supportGrid.Columns[0].Width - 140) / 2, 0, 0, 0);
+            supportGrid.Columns[0].Width = 30;
+            supportGrid.Columns[1].Width = 100;
+            supportGrid.Columns[2].Width = 400;
+            supportGrid.Columns[3].Width = 80;
+            supportGrid.Columns[3].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            supportGrid.Columns[4].Width = 80;
+            supportGrid.Columns[4].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            supportGrid.Columns[5].Width = 80;
+            supportGrid.Columns[5].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
         }
 
         private DataTable originalDataTable;
@@ -49,7 +65,7 @@ namespace ProblemCatalogue
 
                 Dictionary<string, string> rowData = FetchRowDataFromDatabase(referenceNo);
 
-                DetailsForm detailsForm = new DetailsForm(rowData);
+                DetailsForm detailsForm = new DetailsForm(rowData, Username);
                 detailsForm.Show();
             }
         }
@@ -58,8 +74,8 @@ namespace ProblemCatalogue
         {
             Dictionary<string, string> rowData = new Dictionary<string, string>();
 
-            string connectionString = "Data Source=10.164.11.44:1521/xepdb1;User Id = drs; Password=drs;";
-
+            string connectionString = "User Id=drs;Password=drs;Data Source=SmartDev.ftcp.ten.fujitsu.com:1521/xepdb1";
+             
             using (OracleConnection connection = new OracleConnection(connectionString))
             {
                 connection.Open();
@@ -87,7 +103,7 @@ namespace ProblemCatalogue
 
         private void LoadDataFromDatabase()
         {
-            string connectionString = "Data Source=10.164.11.44:1521/xepdb1;User Id = drs; Password=drs;";
+            string connectionString = "User Id=drs;Password=drs;Data Source=SmartDev.ftcp.ten.fujitsu.com:1521/xepdb1";
 
             using (OracleConnection connection = new OracleConnection(connectionString))
             {
@@ -128,7 +144,8 @@ namespace ProblemCatalogue
                 foreach (DataRow row in originalDataTable.Rows)
                 {
                     object cellValue = row[1];
-                    if (cellValue != null && cellValue.ToString().IndexOf(searchQuery, StringComparison.OrdinalIgnoreCase) >= 0)
+                    object cellValue2 = row[2];
+                    if ((cellValue != null && cellValue.ToString().IndexOf(searchQuery, StringComparison.OrdinalIgnoreCase) >= 0) || (cellValue2 != null && cellValue.ToString().IndexOf(searchQuery, StringComparison.OrdinalIgnoreCase) >= 0))
                     {
                         filteredDataTable.Rows.Add(row.ItemArray);
                     }

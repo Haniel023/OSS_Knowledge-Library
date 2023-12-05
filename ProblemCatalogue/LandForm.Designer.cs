@@ -30,17 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LandForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btn_leaderBoard = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pbProfilePicture = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnCatalogue = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblSection = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -52,7 +54,9 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.Teal;
-            this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.btn_leaderBoard);
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.pbProfilePicture);
             this.splitContainer1.Panel1.Controls.Add(this.button3);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.btnCatalogue);
@@ -63,9 +67,53 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
+            this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.splitContainer1.Size = new System.Drawing.Size(1179, 623);
             this.splitContainer1.SplitterDistance = 262;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // btn_leaderBoard
+            // 
+            this.btn_leaderBoard.BackColor = System.Drawing.Color.Teal;
+            this.btn_leaderBoard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_leaderBoard.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_leaderBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_leaderBoard.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btn_leaderBoard.ForeColor = System.Drawing.Color.White;
+            this.btn_leaderBoard.Location = new System.Drawing.Point(-3, 367);
+            this.btn_leaderBoard.Name = "btn_leaderBoard";
+            this.btn_leaderBoard.Size = new System.Drawing.Size(269, 42);
+            this.btn_leaderBoard.TabIndex = 8;
+            this.btn_leaderBoard.Text = "Leaderboard";
+            this.btn_leaderBoard.UseVisualStyleBackColor = false;
+            this.btn_leaderBoard.Click += new System.EventHandler(this.btn_leaderBoard_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(-3, 326);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(269, 42);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Profile";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pbProfilePicture
+            // 
+            this.pbProfilePicture.BackgroundImage = global::ProblemCatalogue.Properties.Resources.resized;
+            this.pbProfilePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pbProfilePicture.Location = new System.Drawing.Point(12, 24);
+            this.pbProfilePicture.Name = "pbProfilePicture";
+            this.pbProfilePicture.Size = new System.Drawing.Size(115, 117);
+            this.pbProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbProfilePicture.TabIndex = 6;
+            this.pbProfilePicture.TabStop = false;
             // 
             // button3
             // 
@@ -153,17 +201,6 @@
             this.lblUserName.Text = "Name";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::ProblemCatalogue.Properties.Resources.resized;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(115, 117);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // LandForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,12 +211,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LandForm";
-            this.Text = "System Support Catalogue";
+            this.Text = "System Support Catalogue v2.5";
+            this.Load += new System.EventHandler(this.LandForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,6 +231,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnCatalogue;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbProfilePicture;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_leaderBoard;
     }
 }
